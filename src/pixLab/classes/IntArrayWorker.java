@@ -30,6 +30,22 @@ public class IntArrayWorker
 	  return count;
   }
   
+  public int getColTotal(int column)
+  {
+	  
+	  int colum = 0;
+	
+	  for(int [] col : matrix)
+	  {
+		  for (int item : col)
+		  {
+			 
+		  }
+	  }
+	
+	  return colum;
+  }
+  
   public int getLargest()
   {
 	  int largest = Integer.MIN_VALUE;
