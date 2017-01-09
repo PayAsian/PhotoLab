@@ -27,6 +27,23 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  public static void testMirrorVerticalRightToLeft()
+  {
+	  Picture bike = new Picture("blueMotorcycle.jpg");
+	  bike.explore();
+	  bike.mirrorVerticalRightToLeft();
+	  bike.explore();
+	  bike.zeroBlue();
+	  bike.explore();
+  }
+  
+  public static void testMirrowHorizontalBottomToTop()
+  {
+	  Picture snowman = new Picture("snowman.jpg");
+	  snowman.mirrorHorizontalBottomToTop();
+	  snowman.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -67,6 +84,8 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     testMirrorVertical();
+    testMirrorVerticalRightToLeft();
+    testMirrowHorizontalBottomToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
