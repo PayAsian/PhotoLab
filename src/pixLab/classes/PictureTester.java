@@ -59,6 +59,10 @@ public class PictureTester
 	  gulls.explore();
 	  gulls.mirrorGulls();
 	  gulls.explore();
+	  gulls.fullRandomBlue();
+	  gulls.fullRandomRed();
+	  gulls.explore();
+	 
   }
   
   /** Method to test the collage method */
@@ -101,7 +105,7 @@ public class PictureTester
     //testCollage();
     //testCopy();
     //testEdgeDetection();
-    //testEdgeDetectionMkTwo();
+    testEdgeDetectionMkTwo();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
