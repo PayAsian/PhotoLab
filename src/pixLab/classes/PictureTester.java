@@ -53,6 +53,14 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorGull()
+  {
+	  Picture gulls = new Picture("seagull.jpg");
+	  gulls.explore();
+	  gulls.mirrorGulls();
+	  gulls.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -84,16 +92,16 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-    testMirrorVerticalRightToLeft();
+    //testMirrorVerticalRightToLeft();
     //testMirrowHorizontalBottomToTop();
-    //testMirrorTemple();
+    testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
-    testEdgeDetectionMkTwo();
+    //testEdgeDetectionMkTwo();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

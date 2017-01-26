@@ -173,11 +173,43 @@ public class Picture extends SimplePicture
       {
         
         leftPixel = pixels[row][col];      
-        rightPixel = pixels[row]                       
-                         [mirrorPoint - col + mirrorPoint];
+        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorGulls()
+  {
+	    int mirrorPoint = 350;
+	    int mirrorPoint2 = 200;
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int count = 0;
+	    Pixel[][] pixels = this.getPixels2D();
+	    
+	    for (int row = 223; row < 318; row++)
+	    {
+	      for (int col = 223; col < mirrorPoint; col++)
+	      {
+	        
+	        leftPixel = pixels[row][col];      
+	        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    }
+	    
+	    for (int row = 223; row < 318; row++)
+	    {
+	      for (int col = 223; col < mirrorPoint; col++)
+	      {
+	        
+	        leftPixel = pixels[row][col];      
+	        rightPixel = pixels[row][mirrorPoint2 - col + mirrorPoint2];
+	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    }
+	    
   }
   
   /** copy from the passed fromPic to the
@@ -278,15 +310,80 @@ public class Picture extends SimplePicture
 	    }  
   }
   
+  public void fullRandom()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int)(Math.random()*256);
+			  int green = (int)(Math.random()*256);
+			  int blue = (int)(Math.random()*256);
+			  
+			  currentPixel.setColor(new Color(red, green, blue));
+		  }
+	  }
+  }
+  
+  public void fullRandomGreen()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+		
+			  int green = (int)(Math.random()*256);
+			 
+			  
+			  currentPixel.setColor(new Color(currentPixel.getRed(), green, currentPixel.getBlue()));
+			  //or
+			  //currentPixel.setGreen(green);
+		  }
+	  } 
+  }
+  
+  public void fullRandomRed()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int)(Math.random()*256);
+			  
+			 currentPixel.setRed(red);
+		  }
+	  }
+  }
+  
+  public void fullRandomBlue()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int blue = (int)(Math.random()*256);
+			  
+			  currentPixel.setBlue(blue);
+		  }
+	  }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("kitten2.jpg");
     beach.explore();
-    beach.zeroBlue();
+    beach.fullRandomGreen();
+    beach.explore();
+    beach.fullRandomRed();
+    beach.explore();
+    beach.fullRandomBlue();
     beach.explore();
   }
   
