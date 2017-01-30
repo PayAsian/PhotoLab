@@ -145,12 +145,12 @@ public class Picture extends SimplePicture
 	  Pixel bottomPixel = null;
 	  int height = pixels[0].length;
 	  
-	  for (int row = pixels.length - 1; row>= 0; row--)
+	  for (int col = height / 2 - 1; col >= 0; col-- )
 	  {
-		  for (int col = height / 2 - 1; col >= 0; col-- )
+		  for (int row = pixels.length - 1; row>= 0; row-- )
 		  {
-			  bottomPixel = pixels[row][col];
-			  topPixel = pixels[row][height - col - 1];
+			  bottomPixel = pixels[col][row];
+			  topPixel = pixels[col][height - row - 1];
 			  bottomPixel.setColor(topPixel.getColor());
 		  }
 	  }
@@ -379,12 +379,13 @@ public class Picture extends SimplePicture
   {
     Picture beach = new Picture("kitten2.jpg");
     beach.explore();
-    beach.fullRandomGreen();
-    beach.explore();
     beach.fullRandomRed();
-    beach.explore();
     beach.fullRandomBlue();
+    //beach.fullRandomGreen();
+    beach.mirrorVertical();
+    //beach.mirrorGulls();
     beach.explore();
+    
   }
   
 } // this } is the end of class Picture, put all new methods before this
