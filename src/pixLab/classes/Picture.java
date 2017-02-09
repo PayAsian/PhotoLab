@@ -404,7 +404,7 @@ public class Picture extends SimplePicture
     meme.addMessage("Will you be the child to my gorilla enclosure?", 270, 125);
     meme.copy(heart, 250, 20);
     meme.copy(heart,189, 1000);
-    meme.write("MemeKing");
+    meme.write("MemeKing.jpg");
     meme.explore();
     
     
