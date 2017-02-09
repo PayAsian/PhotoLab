@@ -221,7 +221,7 @@ public class Picture extends SimplePicture
 	  int count = 0;
 	  Pixel [][] pixels = this.getPixels2D();
 	  
-	  for(int row = 193; row < 193; row++)
+	  for(int row = 154; row < 191; row++)
 	  {
 		  for(int col = 105; col < mirrorPoint; col++)
 		  {
@@ -397,14 +397,16 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("snowman.jpg");
-    beach.explore();
-    //beach.fullRandomRed();
-    //beach.fullRandomBlue();
-    //beach.fullRandomGreen();
-   // beach.mirrorVertical();
-    //beach.mirrorGulls();
-   // beach.explore();
+    Picture meme = new Picture("Harambe.jpg");
+    Picture heart = new Picture("Hearts.jpg");
+    
+    meme.explore();
+    meme.addMessage("Will you be the child to my gorilla enclosure?", 270, 125);
+    meme.copy(heart, 250, 20);
+    meme.copy(heart,189, 1000);
+    meme.write("MemeKing");
+    meme.explore();
+    
     
   }
   
