@@ -392,20 +392,17 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture meme = new Picture("Harambe.jpg");
-    Picture heart = new Picture("Hearts.jpg");
+    Picture glitch  = new Picture("Harambe.jpg");
     
-    meme.explore();
-    meme.addMessage("Will you be the child to my gorilla enclosure?", 270, 125);
-    meme.copy(heart, 250, 20);
-    meme.copy(heart,189, 1000);
-    meme.write("MemeKing.jpg");
-    meme.explore();
+    glitch.explore();
+    
+
     
     
   }
