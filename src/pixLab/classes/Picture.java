@@ -401,8 +401,11 @@ public class Picture extends SimplePicture
     Picture glitch  = new Picture("Harambe.jpg");
     
     glitch.explore();
+    glitch.fullRandomRed();
+    glitch.mirrorVertical();
+    glitch.explore();
+    glitch.write("Peyton Trevino GlitchArt.jpg");
     
-
     
     
   }
