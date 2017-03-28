@@ -89,6 +89,18 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testStenganography()
+  {
+	  Picture source = new Picture("");
+	  source.explore();
+	  Picture hidden = new Picture("");
+	  source.encode(hidden);
+	  source.explore();
+	  hidden.explore();
+	  source.decode();
+	  
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)

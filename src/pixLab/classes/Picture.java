@@ -392,6 +392,61 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void encode(Picture otherPic)
+  {
+	  Pixel[][] source = this.getPixels2D();
+	  Pixel [][] hiddenData = otherPic.getPixels2D();
+	  
+	  Pixel sourcePixel = null;
+	  Pixel hiddenPicture = null;
+	  
+	  for(int row = 0; row < source.length; row++)
+	  {
+		  for(int col = 0; col < source[0].length; col++)
+		  {
+			  hiddenPicture = hiddenData[row][col];
+			  sourcePixel = source[row][col];
+			  
+			  if(hiddenPicture.getRed() == 225 && hiddenPicture.getGreen() == 255 && hiddenPicture.getBlue() == 255)
+			  {
+				  int currentRed = sourcePixel.getRed();
+				  if(currentRed % 2 == 0)
+				  {
+					  sourcePixel.setRed(currentRed + 1);
+				  }
+			  }
+			  else
+			  {
+				  int currentRed = sourcePixel.getRed();
+				  if(currentRed % 2 !=0)
+				  {
+					  sourcePixel.setRed(currentRed - 1);
+				  }
+			  }
+		  }
+	  }
+  }
+  
+  public void decode()
+  {
+	  Pixel [][] decoded = this.getPixels2D();
+	  Pixel currentPixel = null;
+	  
+		for(int row = 0; row < decoded.length; row++)
+		{
+			for(int col = 0; col < decoded[0].length; col++)
+			{
+				currentPixel = decoded[row][col];
+				int currentRed = currentPixel.getRed();
+				if(currentRed % 2 == 0)
+				{
+					currentPixel.setColor(new Color(127,255, 0));
+				}
+			}
+		}
+		this.explore();
+  }
+  
   
   /* Main method for testing - each class in Java can have a main 
    * method 
